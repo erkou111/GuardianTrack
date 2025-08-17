@@ -8,33 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Primary brand colors - tech blue */
+    --primary: 214 90% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 214 85% 60%;
+    --primary-glow: 214 95% 70%;
+    
+    /* Health colors - medical green */
+    --health: 142 76% 45%;
+    --health-foreground: 0 0% 100%;
+    --health-light: 142 71% 55%;
+    --health-glow: 142 81% 65%;
+    
+    /* Background system */
+    --background: 220 20% 97%;
+    --background-secondary: 220 15% 95%;
+    --foreground: 222 84% 5%;
+    
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --card-foreground: 222 84% 5%;
+    --card-hover: 220 15% 98%;
+    
+    /* Interface elements */
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 15% 90%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 214 85% 95%;
+    --accent-foreground: 214 90% 20%;
+    
+    /* Status colors */
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 214 90% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-health: linear-gradient(135deg, hsl(var(--health)), hsl(var(--health-light)));
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--background-secondary)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card-hover)));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-health: 0 4px 20px -4px hsl(var(--health) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -56,33 +86,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Primary colors - darker theme */
+    --primary: 214 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 214 85% 65%;
+    --primary-glow: 214 95% 75%;
+    
+    /* Health colors */
+    --health: 142 76% 50%;
+    --health-foreground: 0 0% 100%;
+    --health-light: 142 71% 60%;
+    --health-glow: 142 81% 70%;
+    
+    /* Dark backgrounds */
+    --background: 220 25% 8%;
+    --background-secondary: 220 20% 10%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    
+    /* Dark cards */
+    --card: 220 20% 12%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --card-hover: 220 15% 15%;
+    
+    /* Dark interface */
+    --secondary: 220 15% 18%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 214 85% 15%;
+    --accent-foreground: 214 90% 80%;
+    
+    /* Dark borders */
+    --border: 220 15% 22%;
+    --input: 220 15% 18%;
+    --ring: 214 90% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
