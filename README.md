@@ -1,73 +1,26 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/b1228d15-3dc5-4c0f-82ac-e287b2cf3914
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/b1228d15-3dc5-4c0f-82ac-e287b2cf3914) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b1228d15-3dc5-4c0f-82ac-e287b2cf3914) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+产品背景
+  这是一款软硬件结合的智能家居，核心用户为老年人、行动不便人群和养老院，潜在用户为医院、康复中心和高端智能家居用户。
+一、市场需求
+  1. 人口老龄化趋势
+    - 中国 60 岁及以上人口已超 2.9 亿，独居或空巢老人比例持续上升。
+    - 老年人跌倒、突发疾病、孤独感等问题亟需解决。
+  2. 家庭陪护能力不足
+    - 子女工作繁忙或在异地，无法实时看护老人。
+    - 传统摄像头只能“看”，不能主动移动、照明或情感陪伴。
+  3. 智慧养老政策推动
+    - 政府在推动“智慧养老”与“居家养老”建设，鼓励技术产品进入家庭和养老机构。
+  4. 智能家居升级需求
+    - 高端家庭希望家电不只是功能化，还能有情感价值和安全守护功能。
+二、用户痛点
+  1. 安全隐患
+    - 老人夜间摔倒风险高（跌倒是老年人意外死亡的主要原因之一）。
+    - 行动不便人群独处时，突发疾病没人及时发现。
+  2. 孤独感与情感缺失
+    - 独居老人缺少交流对象，容易产生抑郁、焦虑。
+    - 视频通话需要主动操作，老人可能不会用。
+  3. 现有产品功能单一
+    - 普通监控摄像头只能定点拍摄，无法跟随照明或主动互动。
+    - 智能音箱只能聊天，缺乏安全监控和移动照明功能。
+  4. 家庭照护压力大
+    - 子女远程担心父母安全，频繁打电话确认耗时耗力。
+    - 护理员数量有限，养老院难做到 24 小时全覆盖。
