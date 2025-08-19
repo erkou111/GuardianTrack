@@ -1,19 +1,28 @@
-import { Settings, User, Bot, Phone, Mail, Calendar, MapPin, Heart, Shield } from "lucide-react";
+import { Settings, User, Bot, Phone, Mail, Calendar, MapPin, Heart, Shield, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { useAuth } from "@/context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export function ProfilePage() {
+  const { user, signOutUser } = useAuth();
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-background pb-20 px-4 pt-6">
       <div className="max-w-md mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-foreground">个人中心</h1>
-          <Button variant="ghost" size="icon">
-            <Settings className="h-5 w-5" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={async () => { localStorage.removeItem("auth:bypass"); await signOutUser(); navigate("/auth", { replace: true }); }}>
+              <LogOut className="h-4 w-4 mr-1" /> 退出
+            </Button>
+            <Button variant="ghost" size="icon">
+              <Settings className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
 
         {/* Software User Profile */}
@@ -33,8 +42,8 @@ export function ProfilePage() {
                 </AvatarFallback>
               </Avatar>
               <div className="flex-1">
-                <h3 className="font-semibold text-foreground">张明</h3>
-                <p className="text-sm text-muted-foreground">家属监护人</p>
+                <h3 className="font-semibold text-foreground">{user?.displayName || "已登录用户"}</h3>
+                <p className="text-sm text-muted-foreground">{user?.uid?.slice(0,8)}...</p>
                 <Badge variant="outline" className="mt-1">
                   <div className="w-2 h-2 bg-success rounded-full mr-1" />
                   已认证
@@ -45,15 +54,15 @@ export function ProfilePage() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>138****5678</span>
+                <span>{user?.phoneNumber || "未绑定"}</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>zhang.m****@example.com</span>
+                <span>{user?.email || "未绑定"}</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Calendar className="h-4 w-4" />
-                <span>注册时间: 2024年1月15日</span>
+                <span>用户创建时间: {user?.metadata?.creationTime || "--"}</span>
               </div>
             </div>
           </CardContent>
